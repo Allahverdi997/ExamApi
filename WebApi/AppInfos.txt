@@ -1,0 +1,22 @@
+﻿User Credentials:
+Admin
+  UserName -> admin
+  Password -> Admin123!
+User
+  UserName -> user
+  Password -> User123!
+
+Docker:
+  mongo:
+    1.docker run -d --name mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=adminpw mongo:latest
+    2.docker exec -it mongo bash
+    3.mongosh -u admin -p adminpw --authenticationDatabase admin
+    4. use LoggingDatabase
+    5.db.createUser({
+  user: "logger",
+  pwd: "loggerpw",
+  roles: [{ role: "readWrite", db: "LoggingDatabase" }]
+})
+
+Note: Ya da DockerFile'dan da ist ede bilersiniz.
+  

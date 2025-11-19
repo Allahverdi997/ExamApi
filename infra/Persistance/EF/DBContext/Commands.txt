@@ -1,0 +1,2 @@
+﻿EntityFrameworkCore\Add-Migration first -StartupProject WebApi -Project Persistance
+EntityFrameworkCore\update-database
