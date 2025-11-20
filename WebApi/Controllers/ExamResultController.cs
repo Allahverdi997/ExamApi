@@ -25,7 +25,7 @@ namespace WebApi.Controllers
         public async Task<ActionResult<BaseResponseModel<List<ExamResultResponse>>>> GetList([FromQuery] PagingRequest pagingRequest)
         {
             var model = await _examResultService.GetDataListAsync<ExamResultResponse>(null, pagingRequest);
-            throw new Exception("test");
+
             if (model.Success)
                 return Ok(model);
 

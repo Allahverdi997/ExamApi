@@ -10,7 +10,7 @@ namespace Application.Models.Request.Core
 {
     public class PagingRequest:MapTo<BasePagingResponse>
     {
-        public int PageSize { get; set; } = 10;
+        public int PageSize { get; set; } = 1000;
         public int PageNumber { get; set; } = 1;
     }
 }

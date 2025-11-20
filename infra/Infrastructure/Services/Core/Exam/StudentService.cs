@@ -31,6 +31,7 @@ namespace Infrastructure.Services.Core.Exam
             return await _unitOfWork.StudentReadRepository.Table
                          .Skip((pagingRequest.PageNumber - 1) * pagingRequest.PageSize)
                          .Take(pagingRequest.PageSize)
+                         .OrderByDescending(x=>x.CreateDate)
                          .ToListAsync();
         }
 

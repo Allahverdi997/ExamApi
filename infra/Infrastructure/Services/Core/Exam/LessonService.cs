@@ -48,6 +48,7 @@ namespace Infrastructure.Services.Core.Exam
                          .Take(pagingRequest.PageSize)
                          .Include(x=>x.Lesson)
                          .Include(x=>x.Teacher)
+                         .OrderByDescending(x => x.CreateDate)
                          .ToListAsync();
         }
 

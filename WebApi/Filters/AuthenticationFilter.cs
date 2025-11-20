@@ -60,12 +60,14 @@ namespace WebApi.Filters
             catch (Exception ex)
             {
                context.Result= _exceptionHandler.HandleException(ex).Result;
-                _noSqlUnitOfWork.ErrorLogWriteRepository.Add(new NoSqlService.Domain.Entities.Main.ErrorLogs()
-                {
-                    Class = "AuthenticationFilter",
-                    CreateDate = DateTime.Now,
-                    Data = ex.Message
-                });
+
+                //If you want use mongo logging, you will this code by uncommitting it
+                //_noSqlUnitOfWork.ErrorLogWriteRepository.Add(new NoSqlService.Domain.Entities.Main.ErrorLogs()
+                //{
+                //    Class = "AuthenticationFilter",
+                //    CreateDate = DateTime.Now,
+                //    Data = ex.Message
+                //});
             }
 
         }

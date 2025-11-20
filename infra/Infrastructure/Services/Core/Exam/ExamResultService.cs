@@ -33,6 +33,7 @@ namespace Infrastructure.Services.Core.Exam
                          .Take(pagingRequest.PageSize)
                          .Include(x => x.Student)
                          .Include(x => x.Lesson)
+                         .OrderByDescending(x => x.CreateDate)
                          .ToListAsync();
         }
 

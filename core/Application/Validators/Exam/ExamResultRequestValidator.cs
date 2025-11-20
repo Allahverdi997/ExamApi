@@ -15,10 +15,6 @@ namespace Application.Validators.Exam
             RuleFor(x => x.ExamValue)
                 .NotEmpty().WithMessage("Boş ola bilməz.")
                 .LessThanOrEqualTo(9).WithMessage("9'dan yuxari daxil edile bilməz.");
-
-            RuleFor(x => x.ExamDate)
-                .GreaterThanOrEqualTo<ExamResultRequest,DateTime>(DateTime.Now.AddDays(-1))
-                .WithMessage("Tarix bu gun ve sonrasi ola biler.");
         }
     }
 }
